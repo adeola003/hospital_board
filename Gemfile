@@ -31,6 +31,9 @@ gem "jbuilder"
 gem "chartkick"
 gem "groupdate"
 
+#rubocop linter
+gem 'rubocop', '>= 1.0', '< 2.0'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
