@@ -1,0 +1,21 @@
+    <p>Welcome, <%= current_user.name %>! </p>
+
+    <p>This is your dashboard as a doctor </p>
+
+    <p>Here you can access all the links you need for your job. Check instructions below to perform operations </p>
+
+    <div>
+        <%= link_to 'Check patients graph', new_patient_path, class: "btn btn-success" %>
+
+            <p>Or check patient list below.</p>
+
+        <%= link_to "Patients", patients_path, class: "btn btn-primary" %>
+
+    </div>
+
+    <div>
+        <%= line_chart Patient.group_by_day(:created_at).count %>
+    </div>
+
+
+
