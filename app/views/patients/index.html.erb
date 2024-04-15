@@ -1,33 +1,32 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Patients</h1>
-
-<%= link_to "New patient", new_patient_path %>
-
- <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Name</th>
-          <th scope="col">Age</th>
-          <th scope="col" colspan="2" class="text-center">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <% @patients.each do |patient| %>
-         <tr>
-            <th scope="row"><%=patient.id%></th>
-            <td><%=patient.name%></td>
-            <td><%=patient.age%></td>
-            <td><%= link_to 'Details', patient_path(patient) %></td>
-            <td><%= button_to 'Delete', patient_path(patient), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-         </tr>
-        <tr>
-        <% end %>
-      </tbody>
-    </table>
-
-
-
-
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-12">
+      <p style="color: green;"><%= notice %></p>
+      <h1>Patients</h1>
+      <%= link_to "New patient", new_patient_path, class: "btn btn-success mb-3" %>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col" colspan="2" class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @patients.each do |patient| %>
+            <tr>
+              <th scope="row"><%= patient.id %></th>
+              <td><%= patient.name %></td>
+              <td><%= patient.age %></td>
+              <td><%= link_to 'Details', patient_path(patient), class: "btn btn-primary" %></td>
+              <td>
+                <%= button_to 'Delete', patient_path(patient), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
