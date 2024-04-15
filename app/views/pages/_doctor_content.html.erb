@@ -5,16 +5,17 @@
     <p>Here you can access all the links you need for your job. Check instructions below to perform operations </p>
 
     <div>
-        <%= link_to 'Check patients graph', new_patient_path, class: "btn btn-success" %>
 
-            <p>Or check patient list below.</p>
+            <p>check patient list below.</p>
 
         <%= link_to "Patients", patients_path, class: "btn btn-primary" %>
 
     </div>
 
+    <h3>Evolution of registered patients per day</h3>
+
     <div>
-        <%= line_chart Patient.group_by_day(:created_at).count %>
+        <%= render 'shared/graph'%>
     </div>
 
 

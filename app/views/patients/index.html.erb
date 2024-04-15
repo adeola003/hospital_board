@@ -2,15 +2,32 @@
 
 <h1>Patients</h1>
 
-<div id="patients">
-  <% @patients.each do |patient| %>
-    <%= render patient %>
-    <p>
-      <%= link_to "Show this patient", patient %>
-    </p>
-  <% end %>
-</div>
-
-<%= render 'shared/graph' %>
-
 <%= link_to "New patient", new_patient_path %>
+
+ <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col" colspan="2" class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% @patients.each do |patient| %>
+         <tr>
+            <th scope="row"><%=patient.id%></th>
+            <td><%=patient.name%></td>
+            <td><%=patient.age%></td>
+            <td><%= link_to 'Details', patient_path(patient) %></td>
+            <td><%= button_to 'Delete', patient_path(patient), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         </tr>
+        <tr>
+        <% end %>
+      </tbody>
+    </table>
+
+
+
+
