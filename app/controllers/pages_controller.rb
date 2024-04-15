@@ -12,7 +12,7 @@ class PagesController < ApplicationController
       # You can access the current user using `current_user`
     else
       # User is not signed in, redirect to the sign-in page
-      redirect_to new_user_registration_path
+      redirect_to new_user_session_path
     end
   end
 
