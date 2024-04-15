@@ -1,17 +1,30 @@
-<div id="<%= dom_id patient %>">
-  <p>
-    <strong>Name:</strong>
-    <%= patient.name %>
-  </p>
+<div id="<%= dom_id(patient) %>" class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-3">
+        <strong>Name:</strong>
+      </div>
+      <div class="col-md-9">
+        <%= patient.name %>
+      </div>
+    </div>
 
-  <p>
-    <strong>Age:</strong>
-    <%= patient.age %>
-  </p>
+    <div class="row">
+      <div class="col-md-3">
+        <strong>Age:</strong>
+      </div>
+      <div class="col-md-9">
+        <%= patient.age %>
+      </div>
+    </div>
 
-  <p>
-    <strong>Symptom:</strong>
-    <%= patient.symptom %>
-  </p>
-
+    <div class="row">
+      <div class="col-md-3">
+        <strong>Symptom:</strong>
+      </div>
+      <div class="col-md-9">
+        <%= patient.symptom %>
+      </div>
+    </div>
+  </div>
 </div>
