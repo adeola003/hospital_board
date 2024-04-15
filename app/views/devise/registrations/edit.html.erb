@@ -3,6 +3,21 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+  <div class="form-group">
+            <%= f.label :name %><br />
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Enter your name", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :role %><br />
+    <%= f.select :role, User.roles.keys, prompt: "Select role", class: "form-control", id: "user_role" %>
+  </div>
+
+  <div id="speciality_field" class="form-group" style="display: none;">
+    <%= f.label :speciality %><br />
+    <%= f.text_field :speciality, autofocus: true, autocomplete: "speciality", placeholder: "Enter your Speciality", class: "form-control" %>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -41,3 +56,19 @@
 <div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
 
 <%= link_to "Back", :back %>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const roleSelect = document.getElementById("user_role");
+    const specialityField = document.getElementById("speciality_field");
+
+    roleSelect.addEventListener("change", function() {
+      if (this.value === "doctor") {
+        specialityField.style.display = "block";
+      } else {
+        specialityField.style.display = "none";
+      }
+    });
+  });
+</script>

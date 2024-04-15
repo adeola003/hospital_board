@@ -9,5 +9,5 @@ class User < ApplicationRecord
   validates :role, presence: true
 
   # Validation for doctor's specialization
-  validates :specialty, presence: true, if: -> { doctor? }
+  validates :speciality, presence: true, if: -> { doctor? }
 end
