@@ -54,8 +54,6 @@ class PatientsController < ApplicationController
     else
       redirect_to patients_path, notice: 'Only receptionist can perform this operation'
     end
-
-
   end
 
   # DELETE /patients/1 or /patients/1.json

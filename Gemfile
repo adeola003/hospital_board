@@ -34,7 +34,7 @@ gem 'groupdate'
 # rubocop linter
 gem 'rubocop', '>= 1.0', '< 2.0'
 
-#Install devise
+# Install devise
 gem 'devise'
 
 # Use Redis adapter to run Action Cable in production
@@ -81,4 +81,4 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem "cssbundling-rails", "~> 1.4"
+gem 'cssbundling-rails', '~> 1.4'
