@@ -17,10 +17,12 @@
               <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
             </li>
           </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+
+          <%= form_with(url: search_patients_path, method: 'get', html: {class: "d-flex"}) do |form| %>
+  <%= form.label :name, "Search by name:", class: "me-2" %>
+  <%= form.text_field :name, class: "form-control me-2" %>
+  <%= form.submit "Search", class: "btn btn-outline-success" %>
+<% end %>
         </div>
       </div>
     </nav>

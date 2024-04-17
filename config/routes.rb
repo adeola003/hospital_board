@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'search_patients', to: 'patients#search', as: :search_patients
   devise_for :users
   root 'pages#home'
   resources :patients
