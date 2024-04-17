@@ -70,6 +70,15 @@ class PatientsController < ApplicationController
     end
   end
 
+  def search_patients
+    if params[:name].present?
+      @patients = Patient.where("name LIKE ?", "%#{params[:name]}%")
+    else
+      @patients = Patient.all
+    end
+  end
+
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
