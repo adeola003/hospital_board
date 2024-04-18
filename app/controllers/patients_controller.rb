@@ -70,12 +70,13 @@ class PatientsController < ApplicationController
     end
   end
 
-  def search_patients
-    if params[:name].present?
-      @patients = Patient.where("name LIKE ?", "%#{params[:name]}%")
-    else
-      @patients = Patient.all
-    end
+def search_patients
+  puts "Params: #{params.inspect}"
+  if params[:name].present?
+    @patients = Patient.where("name LIKE ?", "%#{params[:name]}%")
+  else
+    @patients = Patient.all
+  end
   end
 
 
